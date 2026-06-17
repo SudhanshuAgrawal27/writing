@@ -1,0 +1,206 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  background: #ffffff;
+  color: #111111;
+}
+
+/* --- Navigation --- */
+
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem 0 0.75rem;
+  background: #ffffff;
+}
+
+
+.nav-tabs {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-tab {
+  text-decoration: none;
+  color: #999;
+  font-family: Georgia, serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: none;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-tab:hover {
+  color: #111;
+}
+
+.nav-tab.active {
+  color: #111;
+  border-bottom-color: #111;
+}
+
+/* --- Poem Page --- */
+
+.poem-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 6rem 6rem;
+}
+
+.poem-container {
+  max-width: 38rem;
+  width: 100%;
+}
+
+.poem-title {
+  font-size: 1.3em;
+  font-weight: normal;
+  font-style: italic;
+  margin: 0 0 1.75rem;
+  letter-spacing: 0.01em;
+}
+
+.poem-body {
+  white-space: pre-wrap;
+  font-size: 1rem;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.poem-signature {
+  margin: 1.75rem 0 0;
+  text-align: right;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #aaa;
+}
+
+/* --- Navigation Arrows --- */
+
+.arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ccc;
+  font-size: 2rem;
+  padding: 1rem 1.25rem;
+  line-height: 1;
+  transition: color 0.2s;
+  user-select: none;
+}
+
+.arrow:hover:not(:disabled) {
+  color: #111;
+}
+
+.arrow:disabled {
+  opacity: 0.15;
+  cursor: default;
+}
+
+.arrow-prev {
+  left: 0.5rem;
+}
+
+.arrow-next {
+  right: 0.5rem;
+}
+
+/* --- Poem Slider (dot nav) --- */
+
+.poem-slider {
+  position: fixed;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.slider-dot {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  border: 1.5px solid #bbb;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, serif;
+  font-size: 0.65rem;
+  color: #bbb;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.slider-dot:hover {
+  border-color: #555;
+  color: #555;
+}
+
+.slider-dot.active {
+  border: 2.5px solid #111;
+  color: #111;
+}
+
+/* --- Info Page --- */
+
+.info-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem 4rem;
+}
+
+.info-container {
+  max-width: 34rem;
+  width: 100%;
+}
+
+.info-container p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #333;
+  margin: 0 0 1.25rem;
+}
+
+.info-container p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Mobile --- */
+
+@media (max-width: 640px) {
+  .arrow {
+    display: none;
+  }
+
+  .poem-page {
+    padding: 5rem 1.5rem 6rem;
+  }
+
+  .poem-title {
+    font-size: 1.2em;
+  }
+}
